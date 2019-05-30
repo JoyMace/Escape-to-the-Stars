@@ -3,68 +3,60 @@
 
 Player::Player()
 {
-	name = "";
-	HP = 0;
-	x = 4;
-	y = 4;
-	maxHP = 100;
-	isAlive = true;
+    name = "";
+    HP = 0;
+    x = 4;
+    y = 4;
+    maxHP = 100;
+    isAlive = true;
 }
 Player::~Player()
 {
-	//dtor
+    //dtor
 }
 void Player::setName(string n)
 {
-	name = n;
+    name = n;
 }
 string Player::getName()
 {
-	return name;
+    return name;
 }
 void Player::setHP(int n)
 {
-	HP = n;
+    HP = n;
 }
 int Player::getHP()
 {
-	return HP;
+    return HP;
 }
 void Player::setX(int i)
 {
-	x = i;
+    x = i;
 }
 void Player::setY(int j)
 {
-	y = j;
+    y = j;
 }
 int Player::getX()
 {
-	return x;
+    return x;
 }
 int Player::getY()
 {
-	return y;
+    return y;
+}
+void Player::setGold(int g)
+{
+    gold = g;
+}
+int Player::getGold()
+{
+    return gold;
 }
 
-void Move(Player &p, int dx, int dy)
+// adds item to inventory
+void Player::AddItem(Item item)
 {
-	p.setX(p.getX() + dx);
-	p.setY(p.getY() + dy);
-}
-void moveN(Player &p)
-{
-	Move(p, 0, -1);
-}
-void moveS(Player &p)
-{
-	Move(p, 0, 1);
-}
-void moveE(Player &p)
-{
-	Move(p, 1, 0);
-}
-void moveW(Player &p)
-{
-	Move(p, -1, 0);
+	inventory.push_back(item);
 }
